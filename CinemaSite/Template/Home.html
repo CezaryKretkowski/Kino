@@ -1,0 +1,20 @@
+{%extends "./base.html"%} {% load static %} {% block title%} Home {% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="justify-content-center m-2 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3 text-white ">
+        {% for movie in movies %}
+        <div class="col m-3 rounded-3" style="background-color:#1f1d1d;">
+            <div class="card-body">
+                <p class="card-text">
+                  <a class="text-white text-decoration-none" href="">{{ movie.title }}</a>
+                </p>
+            </div>           
+             <div class="card m-3 shadow-lg ">
+                <img class="img-fluid" alt="Responsive image" src="{{movie.image.url}}"/>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+</div>
+{% endblock %}
